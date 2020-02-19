@@ -29,41 +29,41 @@ export default {
   data () {
     return {
       titleList: [{
-        id: '0001',
-        desc: '小米商城 |'
+        'id': '0001',
+        'desc': '小米商城 |'
       }, {
-        id: '0002',
-        desc: 'MIUI |'
+        ' id': '0002',
+        'desc': 'MIUI |'
       }, {
-        id: '0003',
-        desc: 'IoT |'
+        'id': '0003',
+        'desc': 'IoT |'
       }, {
-        id: '0004',
-        desc: '云服务 |'
+        'id': '0004',
+        'desc': '云服务 |'
       }, {
-        id: '0005',
-        desc: '金融 |'
+        'id': '0005',
+        'desc': '金融 |'
       }, {
-        id: '0006',
-        desc: '有品 |'
+        'id': '0006',
+        'desc': '有品 |'
       }, {
-        id: '0007',
+        'id': '0007',
         desc: '小爱开放平台 |'
       }, {
-        id: '0008',
-        desc: '资质证照 |'
+        'id': '0008',
+        'desc': '资质证照 |'
       }, {
-        id: '0009',
-        desc: '协议规则 |'
+        'id': '0009',
+        'desc': '协议规则 |'
       }, {
-        id: '0010',
-        desc: '企业团购 |'
+        'id': '0010',
+        'desc': '企业团购 |'
       }, {
-        id: '0011',
-        desc: '下载app |'
+        'id': '0011',
+        'desc': '下载app |'
       }, {
-        id: '0012',
-        desc: 'slect location'
+        'id': '0012',
+        'desc': 'slect location'
       }]
     }
   }
