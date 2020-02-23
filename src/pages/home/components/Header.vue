@@ -89,7 +89,7 @@ export default {
       color: #b0b0b0
   .right-nav
     position: absolute
-    right: 3.25rem
+    right: 1.46rem
     font-size: .14rem
     .title-name
       display: inline-block

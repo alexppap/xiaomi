@@ -322,7 +322,7 @@ export default {
   height: 1.25rem
   line-height: 1.25rem
   text-align: center
-  padding: 0 3.25rem 0 1.8rem
+  padding: 0 1.46rem 0 1.8rem
   .img-wrapper
     float: left
     padding-right: 1.2rem
@@ -336,8 +336,11 @@ li
   padding-right: 20px
   float: left
 .hide-area
+  z-index: 99
+  position: absolute
   padding: 0 1.25rem 0 1.25rem
   height: 3rem
+  background: #fff
 .phone-area
   padding-top: .6rem
   height: 3rem
