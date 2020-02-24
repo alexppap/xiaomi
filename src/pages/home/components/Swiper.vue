@@ -1,57 +1,13 @@
 <template>
   <div class="container">
     <div class="left-area">
-      <div class="option">
+      <div
+        class="option"
+        v-for="item of shopList"
+        :key="item.id"
+      >
         <div class="desc">
-          手机 电话卡
-        </div>
-        <div class="iconfont right-arrow">
-          &#xe63f;
-        </div>
-      </div>
-      <div class="option">
-        <div class="desc">
-          手机 电话卡
-        </div>
-        <div class="iconfont right-arrow">
-          &#xe63f;
-        </div>
-      </div>
-      <div class="option">
-        <div class="desc">
-          手机 电话卡
-        </div>
-        <div class="iconfont right-arrow">
-          &#xe63f;
-        </div>
-      </div>
-      <div class="option">
-        <div class="desc">
-          手机 电话卡
-        </div>
-        <div class="iconfont right-arrow">
-          &#xe63f;
-        </div>
-      </div>
-      <div class="option">
-        <div class="desc">
-          手机 电话卡
-        </div>
-        <div class="iconfont right-arrow">
-          &#xe63f;
-        </div>
-      </div>
-      <div class="option">
-        <div class="desc">
-          手机 电话卡
-        </div>
-        <div class="iconfont right-arrow">
-          &#xe63f;
-        </div>
-      </div>
-      <div class="option">
-        <div class="desc">
-          手机 电话卡
+          {{item.desc}}
         </div>
         <div class="iconfont right-arrow">
           &#xe63f;
@@ -60,8 +16,15 @@
     </div>
     <div class="right-area">
       <swiper :options="swiperOption">
-    <swiper-slide><img class="img" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/755aca9487082e7698e16f17cfb70839.jpg?thumb=1&w=1533&h=575&f=webp&q=90"></swiper-slide>
-    <swiper-slide><img class="img" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f159501b4353abc582d5d817ecd93714.jpg?thumb=1&w=1533&h=575&f=webp&q=90"></swiper-slide>
+    <swiper-slide
+      v-for="item of swiperList"
+      :key="item.id"
+    >
+      <img
+       class="img"
+        :src="item.imgUrl"
+      >
+    </swiper-slide>
     <div class="swiper-pagination"  slot="pagination"></div>
     <div class="swiper-button-prev" slot="button-prev"></div>
     <div class="swiper-button-next" slot="button-next"></div>
@@ -83,8 +46,45 @@ export default {
         prevButton: '.swiper-button-prev',
         nextButton: '.swiper-button-next',
         effect: 'fade'
-
-      }
+      },
+      swiperList: [{
+        'id': '0001',
+        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/755aca9487082e7698e16f17cfb70839.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
+      }, {
+        'id': '0002',
+        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f159501b4353abc582d5d817ecd93714.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
+      }, {
+        'id': '0003',
+        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a4aa0cbfad7de34618c4bebdbdeee4e1.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
+      }, {
+        'id': '0004',
+        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2f424f55554befb780ee50a761b2a768.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
+      }, {
+        'id': '0005',
+        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6bd4174b8c5aad67a64864a5716ad152.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
+      }],
+      shopList: [{
+        'id': '0001',
+        'desc': '手机 电话卡'
+      }, {
+        'id': '0002',
+        'desc': '电视 盒子'
+      }, {
+        'id': '0003',
+        'desc': '笔记本 显示器'
+      }, {
+        'id': '0004',
+        'desc': '家电插线板'
+      }, {
+        'id': '0005',
+        'desc': '出行 穿戴'
+      }, {
+        'id': '0006',
+        'desc': '智能 路由器'
+      }, {
+        'id': '0007',
+        'desc': '电源 配件'
+      }]
     }
   }
 }
