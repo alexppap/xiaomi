@@ -30,12 +30,22 @@
     <div class="swiper-button-next" slot="button-next"></div>
   </swiper>
     </div>
+    <div class="hide-area">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HomeSwiper',
+  props: {
+    swiperList: Array,
+    shopList: Array,
+    recommendList: Array
+  },
   data () {
     return {
       swiperOption: {
@@ -46,45 +56,7 @@ export default {
         prevButton: '.swiper-button-prev',
         nextButton: '.swiper-button-next',
         effect: 'fade'
-      },
-      swiperList: [{
-        'id': '0001',
-        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/755aca9487082e7698e16f17cfb70839.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
-      }, {
-        'id': '0002',
-        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/f159501b4353abc582d5d817ecd93714.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
-      }, {
-        'id': '0003',
-        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/a4aa0cbfad7de34618c4bebdbdeee4e1.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
-      }, {
-        'id': '0004',
-        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2f424f55554befb780ee50a761b2a768.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
-      }, {
-        'id': '0005',
-        'imgUrl': 'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6bd4174b8c5aad67a64864a5716ad152.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
-      }],
-      shopList: [{
-        'id': '0001',
-        'desc': '手机 电话卡'
-      }, {
-        'id': '0002',
-        'desc': '电视 盒子'
-      }, {
-        'id': '0003',
-        'desc': '笔记本 显示器'
-      }, {
-        'id': '0004',
-        'desc': '家电插线板'
-      }, {
-        'id': '0005',
-        'desc': '出行 穿戴'
-      }, {
-        'id': '0006',
-        'desc': '智能 路由器'
-      }, {
-        'id': '0007',
-        'desc': '电源 配件'
-      }]
+      }
     }
   }
 }
@@ -121,4 +93,13 @@ export default {
     float:right
     .img
       width: 100%
+  .hide-area
+    display: flex
+    flex-direction: column
+    width: 10.9rem
+    height: 4.09rem
+    position:absolute
+    left: 4.52rem
+    z-index: 2
+    background: #fff
 </style>

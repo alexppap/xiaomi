@@ -1,8 +1,17 @@
 <template>
   <div>
     <home-header :list="titleList"></home-header>
-    <home-navigation></home-navigation>
-    <home-swiper></home-swiper>
+    <home-navigation
+     :breadcList="breadcList"
+     :recommendList="recommendList"
+    >
+     </home-navigation>
+    <home-swiper
+    :swiperList="swiperList"
+    :shopList="shopList"
+    :recommendList="recommendList"
+    >
+    </home-swiper>
   </div>
 </template>
 
@@ -21,7 +30,11 @@ export default {
   },
   data () {
     return {
-      titleList: []
+      titleList: [],
+      breadcList: [],
+      recommendList: [],
+      swiperList: [],
+      shopList: []
     }
   },
   methods: {
@@ -34,6 +47,10 @@ export default {
       if (res.ret && res.data) {
         const data = res.data
         this.titleList = data.titleList
+        this.breadcList = data.breadcList
+        this.recommendList = data.recommendList
+        this.swiperList = data.swiperList
+        this.shopList = data.shopList
       }
     }
   },
