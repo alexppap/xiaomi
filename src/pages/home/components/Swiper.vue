@@ -5,6 +5,7 @@
         class="option"
         v-for="item of shopList"
         :key="item.id"
+        @click="handleAreaClick"
       >
         <div class="desc">
           {{item.desc}}
@@ -30,10 +31,17 @@
     <div class="swiper-button-next" slot="button-next"></div>
   </swiper>
     </div>
-    <div class="hide-area">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
+    <div class="hide-area" v-show="showData">
+      <div
+        class="clearfix"
+        v-for="item of recommendList2"
+        :key="item.id"
+      >
+        <div class="img-wrapper">
+          <img class="img" :src="item.imgUrl">
+        </div>
+        <div class="text-content">{{item.title}}</div>
+      </div>
     </div>
   </div>
 </template>
@@ -44,10 +52,11 @@ export default {
   props: {
     swiperList: Array,
     shopList: Array,
-    recommendList: Array
+    recommendList2: Array
   },
   data () {
     return {
+      showData: false,
       swiperOption: {
         loop: true,
         autoplay: 3000,
@@ -57,6 +66,11 @@ export default {
         nextButton: '.swiper-button-next',
         effect: 'fade'
       }
+    }
+  },
+  methods: {
+    handleAreaClick () {
+      this.showData = !this.showData
     }
   }
 }
@@ -79,6 +93,7 @@ export default {
       height: .35rem
       line-height: .35rem
       color: #fff
+      cursor:pointer
       .desc
         font-size: .18rem
         float: left
@@ -87,7 +102,7 @@ export default {
         float: right
   .right-area
     width: 80%
-    padding-bottom: 37.5%
+    padding-bottom: 30.5%
     height: 0
     overflow: hidden
     float:right
@@ -96,10 +111,26 @@ export default {
   .hide-area
     display: flex
     flex-direction: column
+    flex-wrap: wrap
+    align-content: flex-start
     width: 10.9rem
     height: 4.09rem
     position:absolute
     left: 4.52rem
     z-index: 2
     background: #fff
+    .clearfix
+      display: flex
+      width: 2.425rem
+      height: .35rem
+      padding: .15rem
+      .img-wrapper
+        width: .5rem
+        height: .5rem
+        overflow: hidden
+        .img
+          width: 100%
+      .text-content
+        padding: .085rem 0
+        font-size: .18rem
 </style>

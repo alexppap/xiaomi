@@ -17,7 +17,7 @@
     <li class="title-name"><a href="#" class="headera">注册 |</a></li>
     <li class="title-name"><a href="#" class="headera">消息通知</a></li>
     <li class="title-name">
-    <div class="shopping-car"><span></span>购物车</div>
+    <div class="shopping-car"><span class="iconfont shopping-car">&#xe62d;</span>购物车(0)</div>
     </li>
   </div>
   </div>
@@ -64,10 +64,14 @@ export default {
       width: 1.2rem
       margin-left: .1rem
       background: #424242
+.shopping-car
+  padding-right: .1rem
+  font-size: .16rem
 .headera:link
    color: #b0b0b0
 .headera:visited
   color: #b0b0b0
 .headera:hover
   color: #fff
+
 </style>
