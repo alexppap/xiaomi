@@ -12,6 +12,7 @@
     :recommendList2="recommendList2"
     >
     </home-swiper>
+    <home-cuttime></home-cuttime>
     <home-service></home-service>
   </div>
 </template>
@@ -22,6 +23,7 @@ import HomeHeader from './components/Header'
 import HomeNavigation from './components/Navigation'
 import HomeSwiper from './components/Swiper'
 import HomeService from './components/Service'
+import HomeCuttime from './components/Cuttime'
 
 export default {
   name: 'Home',
@@ -29,7 +31,8 @@ export default {
     HomeHeader,
     HomeNavigation,
     HomeSwiper,
-    HomeService
+    HomeService,
+    HomeCuttime
   },
   data () {
     return {

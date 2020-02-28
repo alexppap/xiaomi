@@ -78,9 +78,8 @@ export default {
 
 <style lang="stylus" scoped>
 .container
-  z-index: 1
   position: relative
-  height: 0
+  height: 4.09rem
   padding: 0 1.46rem 0 1.8rem
   .left-area
     width: 20%
