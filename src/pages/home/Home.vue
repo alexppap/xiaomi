@@ -12,7 +12,7 @@
     :recommendList2="recommendList2"
     >
     </home-swiper>
-    <home-cuttime></home-cuttime>
+    <home-cuttime :cutTimeList="cutTimeList"></home-cuttime>
     <home-service></home-service>
   </div>
 </template>
@@ -41,7 +41,8 @@ export default {
       recommendList: [],
       recommendList2: [],
       swiperList: [],
-      shopList: []
+      shopList: [],
+      cutTimeList: []
     }
   },
   methods: {
@@ -59,6 +60,7 @@ export default {
         this.recommendList2 = data.recommendList2
         this.swiperList = data.swiperList
         this.shopList = data.shopList
+        this.cutTimeList = data.cutTimeList
       }
     }
   },

@@ -19,20 +19,26 @@
           </div>
           </div>
         </el-col>
-        <el-col :span="6">
+        <el-col
+          :span="6"
+          v-for="item of cutTimeList"
+          :key="item.id"
+        >
           <div class="product-area">
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="product-area">
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="product-area">
+            <div class="thumb">
+              <img class="img" :src="item.imgUrl">
+            </div>
+            <h3 class="title">{{item.title}}</h3>
+            <p class="desc">{{item.desc}}</p>
+            <p class="price">
+              <span>{{item.price}}</span>元
+              <del>{{item.delprice}}</del>
+            </p>
           </div>
         </el-col>
       </el-row>
     </div>
+    <img alt="test" height="120" width="100%" src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/11fc2ced4d8b5a924633f9a5b59f9fd2.jpg?thumb=1&amp;w=1533&amp;h=150&amp;f=webp&amp;q=90">
   </div>
 </template>
 
@@ -40,10 +46,13 @@
 
 export default {
   name: 'HomeCuttime',
+  props: {
+    cutTimeList: Array
+  },
   data () {
     return {
-      hours: 0,
-      minutes: 1,
+      hours: 1,
+      minutes: 0,
       seconds: 0
     }
   },
@@ -109,10 +118,11 @@ export default {
   position: relative
   padding: 0 1.46rem 0 1.8rem
   margin-top: .2rem
-  background: #ccc
+  background: #f5f5f5
 .box
-  height: 5.5rem
+  height: 4.5rem
   .header
+    color: #333
     padding: .2rem 0
 .product-area
   height: 3.4rem
@@ -125,20 +135,48 @@ export default {
     padding-top: .2rem
   .desc
     padding-top: .2rem
-    font-size: 16px
+    font-size: .16rem
     color: #b0b0b0
   .time-wrapper
     padding: .2rem .2rem 0 .65rem
     .ii
-      font-size: 46px
+      font-size: .46rem
       float: left
     .time-box
-      margin: 5px
-      width: 46px
-      height: 46px
+      margin: .05rem
+      width: .46rem
+      height: .46rem
       background: #605751
       color: #fff
-      font-size: 24px
-      line-height: 46px
+      font-size: .24rem
+      line-height: .46rem
       float: left
+.thumb
+  padding: .2rem
+  .img
+    width: 1.65rem
+    height: 1.65rem
+.title
+  margin: 0 20px 3px
+  font-size: 14px
+  font-weight: 400
+  text-overflow: ellipsis
+  color: #212121
+  overflow: hidden
+  white-space: nowrap
+.desc
+  height: .18rem;
+  margin: 0 .2rem .12rem;
+  font-size: .12rem;
+  text-overflow: ellipsis;
+  color: #b0b0b0;
+  overflow: hidden;
+  white-space: nowrap;
+.price
+  font-size: .16rem
+  margin: 0;
+  color: #ff6709
+  del
+    color: #b0b0b0
+    text-decoration: line-through
 </style>
