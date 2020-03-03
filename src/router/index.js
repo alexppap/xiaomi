@@ -13,7 +13,11 @@ export default new Router({
     },
     {
       path: '/login',
+<<<<<<< HEAD
       name: 'Login',
+=======
+      name: 'login',
+>>>>>>> login-layout
       component: Login
     }
   ]
