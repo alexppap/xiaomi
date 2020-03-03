@@ -13,8 +13,8 @@
     </ul>
   </div>
   <div class="right-nav">
-    <li class="title-name"><a href="#" class="headera">登录 |</a></li>
-    <li class="title-name"><a href="#" class="headera">注册 |</a></li>
+    <li class="title-name"><router-link class="headera" to="/login">登录 |</router-link></li>
+    <li class="title-name"><router-link class="headera" to="/login">注册 |</router-link></li>
     <li class="title-name"><a href="#" class="headera">消息通知</a></li>
     <li class="title-name">
     <div class="shopping-car"><span class="iconfont shopping-car">&#xe62d;</span>购物车(0)</div>
