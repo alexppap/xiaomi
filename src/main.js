@@ -4,6 +4,7 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import store from './store/index'
 import 'element-ui/lib/theme-chalk/index.css'
 import 'styles/reset.css'
 import 'styles/border.css'
@@ -16,6 +17,7 @@ Vue.use(VueAwesomeSwiper)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

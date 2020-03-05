@@ -13,9 +13,9 @@
             <el-input v-model="username" placeholder="邮箱/手机号码/小米ID"></el-input>
           </div>
           <div class="input">
-            <el-input type="password" v-model="userpsw" placeholder="请输入密码"></el-input>
+            <el-input type="password" v-model="password" placeholder="请输入密码"></el-input>
           </div>
-          <div class="login-button">登录</div>
+          <div class="login-button" @click="doLogin">登录</div>
         </div>
       </div>
     </div>
@@ -28,7 +28,27 @@ export default {
   data () {
     return {
       username: '',
-      userpsw: ''
+      password: ''
+    }
+  },
+  methods: {
+    doLogin () {
+      if (this.username === '') {
+        alert('用户名不能为空')
+        return false
+      }
+      if (this.password === '') {
+        alert('密码不能为空')
+        return false
+      }
+      var user = this.$store.state.loginData[0].username1
+      var psw = this.$store.state.loginData[0].password1
+      if (this.username === user && this.password === psw) {
+        this.$store.commit('changeloginShow')
+        this.$router.push('/')
+      } else {
+        alert('帐号或密码错误')
+      }
     }
   }
 }
