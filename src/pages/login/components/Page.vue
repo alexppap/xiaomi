@@ -6,7 +6,7 @@
         <div class="login-header">
           <a href="#">账号登录</a>
           <span class="line"></span>
-          <a href="#">帐号注册</a>
+          <a href="#">扫码登录</a>
         </div>
         <div class="login-input">
           <div class="input">
@@ -45,6 +45,7 @@ export default {
       var psw = this.$store.state.loginData[0].password1
       if (this.username === user && this.password === psw) {
         this.$store.commit('changeloginShow')
+        this.$store.commit('changeisLogin')
         this.$router.push('/')
       } else {
         alert('帐号或密码错误')

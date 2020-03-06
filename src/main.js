@@ -21,3 +21,15 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.isLogin) {
+    if (store.getters.isLogin) {
+      next()
+    } else {
+      next({path: '/login'})
+    }
+  } else {
+    next()
+  }
+})

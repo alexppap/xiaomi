@@ -20,7 +20,13 @@
     </li>
     <li class="title-name"><a href="#" class="headera">消息通知</a></li>
     <li class="title-name">
-    <div class="shopping-car"><span class="iconfont shopping-car">&#xe62d;</span>购物车(0)</div>
+    <router-link
+      tag="div"
+      class="shopping-car"
+      to="/shopping"
+    >
+     <span class="iconfont shopping-car">&#xe62d;</span>购物车(0)
+    </router-link>
     </li>
   </div>
   </div>
@@ -75,6 +81,7 @@ export default {
 .shopping-car
   padding-right: .1rem
   font-size: .16rem
+  cursor: pointer
 .headera:link
    color: #b0b0b0
 .headera:visited

@@ -16,7 +16,7 @@
       <div class="iconfont img">&#xe60c;</div>
       <div class="desc">人工客服</div>
     </div>
-    <router-link tag="div" class="icon" to="/">
+    <router-link tag="div" class="icon" to="/shopping">
       <div class="iconfont img">&#xe62d;</div>
       <div class="desc">购物车</div>
     </router-link>
@@ -42,6 +42,7 @@ export default {
     padding-top: .2rem
     color: #757575
     text-align: center
+    cursor: pointer
     .img
       font-size: .3rem
     .desc
