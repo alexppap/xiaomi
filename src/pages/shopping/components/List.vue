@@ -3,7 +3,11 @@
     <div class="goods-list">
       <div class="list-header">
         <div class="col col-check">
-          <input class="check-box" type="checkbox">全选
+          <input
+            id="all"
+            class="check-box"
+            type="checkbox"
+            @click="selAll">全选
         </div>
         <div class="col col-img">&nbsp;</div>
         <div class="col col-name">商品名称</div>
@@ -12,30 +16,38 @@
         <div class="col col-total">小计</div>
         <div class="col col-action">操作</div>
       </div>
-      <div class="list-content">
+      <div class="list-content"
+        v-for="(item, index) of list"
+        :key="item.id"
+      >
         <div class="col col-check">
-          <input class="check-box" type="checkbox">
+          <input
+           class="check-box"
+           type="checkbox"
+           @click="item.check = !item.check"
+           :checked="item.check"
+          >
         </div>
         <div class="col col-img">
           <div class="img-wrapper">
-            <img class="img" src="https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560222640.90428593.jpg?thumb=1&w=80&h=80">
+            <img class="img" :src="item.imgUrl">
           </div>
         </div>
-        <div class="col col-name"> 小米「小爱老师」 4G网络尊享版 白色 </div>
-        <div class="col col-price">899元</div>
+        <div class="col col-name"> {{item.name}} </div>
+        <div class="col col-price">{{item.price}}元</div>
         <div class="col col-num">
-          <div class="iconfont mp">&#xe61b;</div>
-          <input class="num-input" type="text">
-          <div class="iconfont mp">&#xe601;</div>
+          <div class="iconfont mp" @click="reduce(index)">&#xe61b;</div>
+          <input class="num-input" type="text" v-model="item.count">
+          <div class="iconfont mp" @click="add(index)">&#xe601;</div>
         </div>
-        <div class="col col-total">1798元</div>
+        <div class="col col-total">{{item.price * item.count}}</div>
         <div class="col col-action">
-          <div class="iconfont">&#xe667;</div>
+          <div class="iconfont" @click="remove(index)">&#xe667;</div>
         </div>
       </div>
     </div>
     <div class="shopping-bottom">
-      <div class="total-price">合计0元</div>
+      <div class="total-price">合计{{totalPrices}}元</div>
       <div class="checkout">去结算</div>
     </div>
   </div>
@@ -43,7 +55,60 @@
 
 <script>
 export default {
-  name: 'ShoppingList'
+  name: 'ShoppingList',
+  data () {
+    return {
+      list: [{
+        id: 1,
+        name: '小米「小爱老师」 4G网络尊享版 白色',
+        imgUrl: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560222640.90428593.jpg?thumb=1&w=80&h=80',
+        price: 899,
+        count: 1,
+        check: true
+      }, {
+        id: 2,
+        name: '小米「小爱老师」 4G网络尊享版 白色',
+        imgUrl: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560222640.90428593.jpg?thumb=1&w=80&h=80',
+        price: 899,
+        count: 1,
+        check: true
+      }]
+    }
+  },
+  methods: {
+    add (index) {
+      this.list[index].count++
+    },
+    reduce (index) {
+      this.list[index].count--
+    },
+    remove (index) {
+      this.list.splice(index, 1)
+    },
+    selAll () {
+      let isAll = document.querySelector('#all')
+      if (isAll.checked === true) {
+        this.list.forEach(function (item, index) {
+          item.check = true
+        })
+      } else {
+        this.list.forEach(function (item, index) {
+          item.check = false
+        })
+      }
+    }
+  },
+  computed: {
+    totalPrices () {
+      let totalPrices = 0
+      this.list.forEach((val, index) => {
+        if (val.check === true) {
+          totalPrices += parseFloat(val.price * val.count)
+        }
+      })
+      return totalPrices.toString().replace(/\B(?=(\d{3})+$)/g, ',') // 每三位加一个 ','
+    }
+  }
 }
 </script>
 
@@ -124,11 +189,15 @@ export default {
   width: 18px
   height: 18px
 .mp
+  position: relative
+  top: .06rem
   width: .28rem
   height: .28rem
   float: left
+  cursor: pointer
 .num-input
   width: .8rem
+  text-align: center
   float: left
   border: 1px solid #e0e0e0
 </style>
