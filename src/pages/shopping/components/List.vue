@@ -114,9 +114,8 @@ export default {
 
 <style lang="stylus" scoped>
   .container
-    background: #f5f5f5
     padding: .4rem 1.5rem 0 1.5rem
-    height: 8rem
+    height: auto
     .goods-list
       background: #fff
     .shopping-bottom
