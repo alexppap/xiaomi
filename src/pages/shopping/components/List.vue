@@ -7,7 +7,8 @@
             id="all"
             class="check-box"
             type="checkbox"
-            @click="selAll">全选
+            @click="selAll"
+            checked>全选
         </div>
         <div class="col col-img">&nbsp;</div>
         <div class="col col-name">商品名称</div>
@@ -56,24 +57,8 @@
 <script>
 export default {
   name: 'ShoppingList',
-  data () {
-    return {
-      list: [{
-        id: 1,
-        name: '小米「小爱老师」 4G网络尊享版 白色',
-        imgUrl: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560222640.90428593.jpg?thumb=1&w=80&h=80',
-        price: 899,
-        count: 1,
-        check: true
-      }, {
-        id: 2,
-        name: '小米「小爱老师」 4G网络尊享版 白色',
-        imgUrl: 'https://cdn.cnbj0.fds.api.mi-img.com/b2c-shopapi-pms/pms_1560222640.90428593.jpg?thumb=1&w=80&h=80',
-        price: 899,
-        count: 1,
-        check: true
-      }]
-    }
+  props: {
+    list: Array
   },
   methods: {
     add (index) {

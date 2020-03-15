@@ -1,8 +1,15 @@
 <template>
   <div>
     <shopping-header></shopping-header>
-    <shopping-list></shopping-list>
-    <shopping-recommend :list="recommendList"></shopping-recommend>
+    <shopping-list
+      :list="shopList"
+    >
+    </shopping-list>
+    <shopping-recommend
+      :list="recommendList"
+      @change="changeShopList"
+    >
+    </shopping-recommend>
   </div>
 </template>
 
@@ -20,10 +27,14 @@ export default {
   },
   data () {
     return {
-      recommendList: []
+      recommendList: [],
+      shopList: []
     }
   },
   methods: {
+    changeShopList (item) {
+      this.shopList.push(item)
+    },
     getHomeInfo () {
       axios.get('/api/shopping.json')
         .then(this.getHomeInfoSucc)

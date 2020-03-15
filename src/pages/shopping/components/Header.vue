@@ -6,6 +6,7 @@
         <div class="header-title">我的购物车</div>
         <div class="header-desc">温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</div>
       </div>
+      <router-link tag="div" class="backto" to="/">返回主页</router-link>
     </div>
   </div>
 </template>
@@ -37,4 +38,7 @@ export default {
       font-size: .14rem
       position: relative
       top: .3rem
+.backto
+  font-size: .2rem
+  float: right
 </style>

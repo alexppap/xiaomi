@@ -25,7 +25,7 @@
       class="shopping-car"
       to="/shopping"
     >
-     <span class="iconfont shopping-car">&#xe62d;</span>购物车(0)
+     <span class="iconfont shopping-car">&#xe62d;</span>购物车
     </router-link>
     </li>
   </div>

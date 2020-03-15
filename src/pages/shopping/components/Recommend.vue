@@ -5,7 +5,7 @@
       <el-row :gutter="20">
         <el-col
           :span="6"
-          v-for="item of list"
+          v-for="(item, index) of list"
           :key="item.id"
         >
           <div class="product-area">
@@ -16,7 +16,7 @@
             <p class="price">
               <span>{{item.price}}</span>元
             </p>
-            <div class="iconfont shopcart">&#xe62d;</div>
+            <div class="iconfont shopcart" @click="addCartItem(index)">&#xe62d;</div>
           </div>
         </el-col>
       </el-row>
@@ -29,6 +29,12 @@ export default {
   name: 'ShoppingRecommend',
   props: {
     list: Array
+  },
+  methods: {
+    addCartItem (index) {
+      let shoplist = this.list[index]
+      this.$emit('change', shoplist)
+    }
   }
 }
 </script>
