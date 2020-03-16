@@ -55,17 +55,23 @@ export default {
   },
   data () {
     return {
-      showData: false
+      showData: false,
+      timer: null
     }
   },
   methods: {
     handleTitleMouseOver (index) {
-      let area = this.$refs['area' + index][0]
-      if (area.style.display === 'none') {
-        area.style.display = 'block'
-      } else {
-        area.style.display = 'none'
+      if (this.timer) {
+        clearTimeout(this.timer)
       }
+      this.timer = setTimeout(() => {
+        let area = this.$refs['area' + index][0]
+        if (area.style.display === 'none') {
+          area.style.display = 'block'
+        } else {
+          area.style.display = 'none'
+        }
+      }, 30)
     }
   },
   computed: {
@@ -113,7 +119,7 @@ li
   height: 3rem
   background: #fff
 .phone-area
-  padding-top: .6rem
+  margin-top: .6rem
   height: 3rem
   text-align: center
 .img
@@ -123,7 +129,7 @@ li
   line-height: .2rem
   font-size: .16rem
 .price
-  margin-top: .2rem
+  padding-top: .2rem
   height: .2rem
   line-height: .2rem
   font-size: .16rem
