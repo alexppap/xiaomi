@@ -531,6 +531,70 @@
         "desc": "颠覆创新—腕间悬浮时光",
         "price": "499",
         "delprice": "599元"
+      }],
+      "adverseList": [{
+        "id": "0001",
+        "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/0099822e42b4428cb25c4cdebc6ca53d.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+        "title": "小米10",
+        "desc": "骁龙865/1亿像素相机",
+        "price": "3999",
+        "delprice": "4299元"
+      },
+      {
+        "id": "0002",
+        "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/2c16238f786e4f93bdb175d7bf21aa47.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+        "title": "Redmi K30",
+        "desc": "120Hz流速屏，全速热爱",
+        "price": "1699",
+        "delprice": "1999元"
+      },
+      {
+        "id": "0003",
+        "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/53641901fbc28cbcdb495b17fdf69e46.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+        "title": "Redmi K30 5G",
+        "desc": "双模5G，120Hz流速屏",
+        "price": "2199",
+        "delprice": "1999元"
+      },
+      {
+        "id": "0004",
+        "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/07270cc09689eb9b13b29aa9f6bc41eb.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+        "title": "小米CC9 Pro",
+        "desc": "1亿像素 五摄四闪",
+        "price": "2599",
+        "delprice": "2799元"
+      },
+      {
+        "id": "0005",
+        "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/d295c4fb500d163a7045dc715b47f808.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+        "title": "Redmi 8",
+        "desc": "5000mAh超长续航",
+        "price": "699",
+        "delprice": "799元"
+      },
+      {
+        "id": "0006",
+        "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/53641901fbc28cbcdb495b17fdf69e46.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+        "title": "Redmi 8A",
+        "desc": "5000mAh超长续航",
+        "price": "599",
+        "delprice": "699元"
+      },
+      {
+        "id": "0007",
+        "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/6f2493e6c6fe8e2485c407e5d75e3651.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+        "title": "Redmi Note 8 Pro",
+        "desc": "双模5G，120Hz流速屏",
+        "price": "1299",
+        "delprice": "1399元"
+      },
+      {
+        "id": "0008",
+        "imgUrl": "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/4c87947d104ee5833913e4c520108f16.jpg?thumb=1&w=250&h=250&f=webp&q=90",
+        "title": "Redmi Note 8",
+        "desc": "千元4800万四摄",
+        "price": "899",
+        "delprice": "999元"
       }]
   }
 }
