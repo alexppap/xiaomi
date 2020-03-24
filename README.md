@@ -1,6 +1,6 @@
 # xiaomi
 
-> A Vue.js project
+> A Vue.js project 用户名：admin 密码：123
 
 ## Build Setup
 
