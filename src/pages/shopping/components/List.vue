@@ -34,7 +34,7 @@
             <img class="img" :src="item.imgUrl">
           </div>
         </div>
-        <div class="col col-name"> {{item.name}} </div>
+        <div class="col col-name"> {{item.title}} </div>
         <div class="col col-price">{{item.price}}元</div>
         <div class="col col-num">
           <div class="iconfont mp" @click="reduce(index)">&#xe61b;</div>
@@ -65,7 +65,9 @@ export default {
       this.list[index].count++
     },
     reduce (index) {
-      this.list[index].count--
+      if (this.list[index].count > 1) {
+        this.list[index].count--
+      }
     },
     remove (index) {
       this.list.splice(index, 1)

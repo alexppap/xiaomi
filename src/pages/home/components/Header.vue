@@ -23,9 +23,16 @@
     <router-link
       tag="div"
       class="shopping-car"
+      :class= "{active: isActive}"
       to="/shopping"
+      ref="shopping"
     >
-     <span class="iconfont shopping-car">&#xe62d;</span>购物车
+     <span
+      class="iconfont shopping-car"
+      :class= "{active: isActive}"
+      >&#xe62d;
+      </span>
+      购物车({{ shopNum}})
     </router-link>
     </li>
   </div>
@@ -38,9 +45,24 @@ export default {
   props: {
     list: Array
   },
+  data () {
+    return {
+      isActive: false
+    }
+  },
   computed: {
     loginShow () {
       return this.$store.state.loginShow
+    },
+    shopNum () {
+      return this.$store.state.shopNum
+    }
+  },
+  activated () {
+    if (this.shopNum > 0) {
+      this.isActive = true
+    } else {
+      this.isActive = false
     }
   }
 }
@@ -78,10 +100,16 @@ export default {
       width: 1.2rem
       margin-left: .1rem
       background: #424242
+    .active
+      background: #ff6700
+      color: #fff
 .shopping-car
   padding-right: .1rem
   font-size: .16rem
   cursor: pointer
+  .active
+    background: #ff6700
+    color: #fff
 .headera:link
    color: #b0b0b0
 .headera:visited

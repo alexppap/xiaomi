@@ -7,7 +7,8 @@ export default new Vuex.Store({
   state: {
     loginData: [{username1: 'admin', password1: '123'}],
     loginShow: false,
-    isLogin: false
+    isLogin: false,
+    shopNum: 0
   },
   getters: {
     // 获取登录状态
@@ -19,6 +20,9 @@ export default new Vuex.Store({
     },
     changeisLogin (state) {
       state.isLogin = !state.isLogin
+    },
+    changeNum (state, num) {
+      state.shopNum = num
     }
   }
 

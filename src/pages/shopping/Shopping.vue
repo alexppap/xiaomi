@@ -31,6 +31,12 @@ export default {
       shopList: []
     }
   },
+  watch: {
+    shopList () {
+      let num = this.shopList.length
+      this.$store.commit('changeNum', num)
+    }
+  },
   methods: {
     changeShopList (item) {
       this.shopList.push(item)
