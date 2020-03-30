@@ -8,7 +8,8 @@
     <shopping-recommend
       :list="recommendList"
       @change="changeShopList"
-      @add-to-cart="addToCart"
+      @addToCart="addToCart"
+      ref="shopcart"
     >
     </shopping-recommend>
   </div>
@@ -42,11 +43,8 @@ export default {
     changeShopList (item) {
       this.shopList.push(item)
     },
-    _drop (target) {
-
-    },
     addToCart (target) {
-      this._drop()
+      this.$refs.shopcart.drop(target)
     },
     getHomeInfo () {
       axios.get('/api/shopping.json')
