@@ -2,6 +2,12 @@
 
 > A Vue.js project 用户名：admin 密码：123
 
+# 技术栈
+
+## 前端Vue2.0 + vue-router + vuex + axios + ES6 + stylus
+
+# 预览
+
 ## Build Setup
 
 ``` bash
