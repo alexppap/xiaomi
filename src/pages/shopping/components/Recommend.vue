@@ -37,13 +37,13 @@
         @before-enter='beforeEnter'
         @enter='enter'
         @after-enter='afterEnter'
+        name="drop"
       >
       <div
         class="ball"
         v-for="ball in balls"
         v-show="ball.show"
         :key="ball.id"
-        transition="drop"
       >
       <div class="inner inner-hook"></div>
       </div>
@@ -108,10 +108,10 @@ export default {
         if (ball.show) {
           let rect = ball.el.getBoundingClientRect() // 获取小球的相对于视口的位移(小球高度)
           let x = -(1642 - rect.left)
-          let y = -(window.innerHeight - rect.top - 400) // 负数是从左上角往下的的方向, 正数是往上
-          console.log(y)
+          let y = -(400 - rect.top) // 负数是从左上角往下的的方向, 正数是往上
           el.style.display = ''// 清空display
           el.style.webkitTransform = `translate3d(0, ${y}px, 0)`
+          console.log(el.style.webkitTransform)
           el.style.transform = `translate3d(0, ${y}px, 0)`
           // 处理内层动画
           let inner = el.getElementsByClassName('inner-hook')[0] // 使用inner-hook类来单纯被js操作
@@ -160,15 +160,14 @@ export default {
       top: 400px
       right: 50px
       z-index: 99
-      &.drop-transition
-        transition: all 1s
       .inner
         width: 16px;
         height: 16px;
         border-radius: 50%;
         background: red;
         transition: all 1s
-
+      &.drop-enter-active
+        transition: all 1s cubic-bezier(0.49,-0.29,.75,.41)
 .product-area
   height: 3.4rem
   text-align: center
