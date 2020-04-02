@@ -71,7 +71,7 @@ export default {
         } else {
           area.style.display = 'none'
         }
-      }, 30)
+      }, 100)
     }
   },
   computed: {

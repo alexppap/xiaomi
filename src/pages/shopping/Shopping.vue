@@ -3,6 +3,7 @@
     <shopping-header></shopping-header>
     <shopping-list
       :list="shopList"
+      ref="shopList"
     >
     </shopping-list>
     <shopping-recommend
@@ -41,7 +42,9 @@ export default {
   },
   methods: {
     changeShopList (item) {
-      this.shopList.push(item)
+      if (this.shopList.indexOf(item) === -1) {
+        this.shopList.push(item)
+      }
     },
     addToCart (target) {
       this.$refs.shopcart.drop(target)

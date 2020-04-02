@@ -111,7 +111,7 @@ export default {
           let y = -(400 - rect.top) // 负数是从左上角往下的的方向, 正数是往上
           el.style.display = ''// 清空display
           el.style.webkitTransform = `translate3d(0, ${y}px, 0)`
-          console.log(el.style.webkitTransform)
+          // console.log(el.style.webkitTransform)
           el.style.transform = `translate3d(0, ${y}px, 0)`
           // 处理内层动画
           let inner = el.getElementsByClassName('inner-hook')[0] // 使用inner-hook类来单纯被js操作
@@ -135,7 +135,7 @@ export default {
       })
     },
     afterEnter (el) {
-      console.log(el)
+      // console.log(el)
       let ball = this.dropBalls.shift() // 完成一次动画就删除一个dropBalls的小球
       if (ball) {
         ball.show = false
