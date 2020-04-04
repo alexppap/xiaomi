@@ -10,7 +10,7 @@
           v-for="(item, index) of breadcList"
           :key="index"
         >
-          <a href="#" @mouseover="handleTitleMouseOver(index)" @mouseout="handleTitleMouseOver(index)">{{item.desc}}</a>
+          <a href="#" @mouseover="handleTitleMouseOver(index)">{{item.desc}}</a>
         </li>
         <li><a href="#">服务器</a></li>
         <li><a href="#">社区</a></li>
@@ -27,6 +27,7 @@
   v-for="(page, index) of pages"
   :key="index"
   :ref="'area' + index"
+  @mouseout="hideHiddenArea($event,index)"
   >
     <el-row :gutter="5">
       <el-col
@@ -65,13 +66,18 @@ export default {
         clearTimeout(this.timer)
       }
       this.timer = setTimeout(() => {
-        let area = this.$refs['area' + index][0]
-        if (area.style.display === 'none') {
-          area.style.display = 'block'
-        } else {
-          area.style.display = 'none'
+        let showarea = this.$refs['area' + index][0]
+        for (let i in this.breadcList) {
+          this.$refs['area' + i][0].style.display = 'none'
         }
+        showarea.style.display = 'block'
       }, 100)
+    },
+    hideHiddenArea (event, index) {
+      if (event.clientY > 450) {
+        let showarea = this.$refs['area' + index][0]
+        showarea.style.display = 'none'
+      }
     }
   },
   computed: {
@@ -120,7 +126,7 @@ li
   background: #fff
 .phone-area
   margin-top: .6rem
-  height: 3rem
+  height: 2.4rem
   text-align: center
 .img
   margin-bottom: .3rem
