@@ -15,6 +15,7 @@
     <home-cuttime :cutTimeList="cutTimeList"></home-cuttime>
     <home-service></home-service>
     <home-advertisement :adverseList="adverseList"></home-advertisement>
+    <home-advertisement2 :adverseList2="adverseList2"></home-advertisement2>
   </div>
 </template>
 
@@ -26,6 +27,7 @@ import HomeSwiper from './components/Swiper'
 import HomeService from './components/Service'
 import HomeCuttime from './components/Cuttime'
 import HomeAdvertisement from './components/Advertisement'
+import HomeAdvertisement2 from './components/Adver2'
 
 export default {
   name: 'Home',
@@ -35,7 +37,8 @@ export default {
     HomeSwiper,
     HomeService,
     HomeCuttime,
-    HomeAdvertisement
+    HomeAdvertisement,
+    HomeAdvertisement2
   },
   data () {
     return {
@@ -46,7 +49,8 @@ export default {
       swiperList: [],
       shopList: [],
       cutTimeList: [],
-      adverseList: []
+      adverseList: [],
+      adverseList2: []
     }
   },
   methods: {
@@ -66,6 +70,7 @@ export default {
         this.shopList = data.shopList
         this.cutTimeList = data.cutTimeList
         this.adverseList = data.adverseList
+        this.adverseList2 = data.adverseList2
       }
     }
   },

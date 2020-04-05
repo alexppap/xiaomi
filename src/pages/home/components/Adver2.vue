@@ -1,16 +1,16 @@
 <template>
   <div class="container">
     <el-container>
-      <el-header>手机</el-header>
+      <el-header>家电</el-header>
       <el-container>
       <el-aside width="234px">
-        <img class="img" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/574c6643ab91c6618bfb2d0e2c761d0b.jpg?thumb=1&w=293&h=768&f=webp&q=90">
+        <img class="img" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/b56fd90a60e3d9e5d87dae9fbd427ea8.jpg?thumb=1&w=293&h=375&f=webp&q=90">
       </el-aside>
       <el-main>
         <el-row :gutter="20">
         <el-col
           :span="6"
-          v-for="item of adverseList"
+          v-for="item of adverseList2"
           :key="item.id"
         >
           <div class="product-area">
@@ -29,14 +29,14 @@
       </el-main>
     </el-container>
 </el-container>
-<img alt="test" height="120" width="100%" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/41d16e66381cfeda7b6b39ab67678d5e.jpg?thumb=1&w=1533&h=150&f=webp&q=90">
+<img alt="test" height="120" width="100%" src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/59e8fc8ba9718c266882719fb4bbcedd.jpg?thumb=1&w=1533&h=150&f=webp&q=90">
   </div>
 </template>
 <script>
 export default {
-  name: 'HomeAdvertisement',
+  name: 'HomeAdvertisement2',
   props: {
-    adverseList: Array
+    adverseList2: Array
   }
 }
 </script>
@@ -44,7 +44,7 @@ export default {
 <style lang="stylus" scoped>
 .container
   padding: 0 1.46rem 0 1.8rem
-  margin-top: .2rem
+  margin-top: .6rem
   height: 8rem
   background: #f5f5f5
 .el-aside
