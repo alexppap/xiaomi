@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Login from '@/pages/login/Login'
 import Shopping from '@/pages/shopping/Shopping'
+import Rigister from '@/pages/rigister/Rigister'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +30,14 @@ export default new Router({
       component: Shopping,
       meta: {
         isLogin: true
+      }
+    },
+    {
+      path: '/rigister',
+      name: 'rigister',
+      component: Rigister,
+      meta: {
+        isLogin: false
       }
     }
   ]

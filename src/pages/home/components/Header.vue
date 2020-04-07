@@ -14,7 +14,7 @@
   </div>
   <div class="right-nav">
     <div v-show="!loginShow" class="loginarea"><li class="title-name"><router-link class="headera" to="/login">登录 |</router-link></li>
-    <li class="title-name"><router-link class="headera" to="/login">注册 |</router-link></li></div>
+    <li class="title-name"><router-link class="headera" to="/rigister">注册 |</router-link></li></div>
     <li class="title-name" v-show="loginShow">
       {{this.$store.state.loginData[0].username1}}
     </li>
