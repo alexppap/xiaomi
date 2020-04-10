@@ -27,6 +27,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'RigisterPage',
   data () {
@@ -35,6 +36,36 @@ export default {
         username: '',
         email: '',
         password: ''
+      }
+    }
+  },
+  methods: {
+    doRegister () {
+      if (!this.user.username) {
+        this.$message.error('请输入用户名！')
+      } else if (!this.user.email) {
+        this.$message.error('请输入邮箱！')
+      } else if (this.user.email != null) {
+        var reg = /^[A-Za-z0-9\u4e00-\u9fa5]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+        if (!reg.test(this.user.email)) {
+          this.$message.error('请输入有效的邮箱！')
+        } else if (!this.user.password) {
+          this.$message.error('请输入密码！')
+        }
+      } if (this.user.username && this.user.email && this.user.password) {
+        // this.$router.push({ path: '/' }) // 无需向后台提交数据，方便前台调试
+        axios.post('/register', {
+          name: this.user.username,
+          email: this.user.email,
+          password: this.user.password
+        })
+          .then(res => {
+            if (res.data.status === 200) {
+              this.$router.push({ path: '/' })
+            } else {
+              alert('您输入的用户名已存在！')
+            }
+          })
       }
     }
   }
