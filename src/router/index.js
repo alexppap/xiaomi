@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/pages/home/Home'
 import Login from '@/pages/login/Login'
 import Shopping from '@/pages/shopping/Shopping'
+import Miui from '@/pages/miui/Miui'
 Vue.use(Router)
 
 export default new Router({
@@ -29,6 +30,14 @@ export default new Router({
       component: Shopping,
       meta: {
         isLogin: true
+      }
+    },
+    {
+      path: '/miui',
+      name: 'miui',
+      component: Miui,
+      meta: {
+        isLogin: false
       }
     }
   ]
