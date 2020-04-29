@@ -6,7 +6,7 @@
       v-for="item of list"
       :key="item.id"
       >
-      <a href="#" class="headera">
+      <a href="#/miui" class="headera">
       {{item.desc}}
       </a>
       </li>
