@@ -17,6 +17,9 @@
           <el-form-item prop="password" label="设置密码">
             <el-input v-model="user.password" show-password placeholder="请输入密码"></el-input>
           </el-form-item>
+          <el-form-item prop="cpassword" label="确认密码">
+            <el-input v-model="user.cpassword" show-password placeholder="请确认密码"></el-input>
+          </el-form-item>
           <el-form-item>
             <el-button type="primary" icon @click="doRegister()">注册账号</el-button>
           </el-form-item>
@@ -35,7 +38,8 @@ export default {
       user: {
         username: '',
         email: '',
-        password: ''
+        password: '',
+        cpassword: ''
       }
     }
   },
@@ -51,8 +55,10 @@ export default {
           this.$message.error('请输入有效的邮箱！')
         } else if (!this.user.password) {
           this.$message.error('请输入密码！')
+        } else if (this.user.password !== this.user.cpassword) {
+          this.$message.error('两次密码不一致')
         }
-      } if (this.user.username && this.user.email && this.user.password) {
+      } if (this.user.username && this.user.email && this.user.password && this.user.cpassword) {
         // this.$router.push({ path: '/' }) // 无需向后台提交数据，方便前台调试
         axios.post('/register', {
           name: this.user.username,
