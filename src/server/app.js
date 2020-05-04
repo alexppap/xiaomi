@@ -3,6 +3,7 @@ const router = require('koa-router')()
 const bodyParser = require('koa-bodyparser')
 const render = require('koa-art-template')
 const path = require('path')
+const DB = require('./mongodb/db.js')
 
 const app = new Koa()
 
@@ -15,17 +16,9 @@ render(app, {
 })
 
 router.get('/', async (ctx) => {
-  let list = {
-
-    name: '张三',
-    mail: '1060788599@qq.com',
-    password: 123456,
-    data: ['11111111', '2222222222', '33333333333']
-  }
-
+  const res = await DB.find('user', {})
   await ctx.render('index', {
-    list: list
-
+    list: res
   })
 })
 

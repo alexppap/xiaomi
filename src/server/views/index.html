@@ -7,11 +7,13 @@
 <body>
     <h2 class="title">拥有的用户信息</h2>
     <br/>
+    {{each list}}
     <ul>
-      <li>{{list.name}}</li>
-      <li>{{list.mail}}</li>
-      <li>{{list.password}}</li>
+      <li>{{$value.user}}</li>
+      <li>{{$value.mail}}</li>
+      <li>{{$value.password}}</li>
     </ul>
+    {{/each}}
     <hr/>
 </body>
 </html>
