@@ -60,14 +60,17 @@ export default {
         }
       } if (this.user.username && this.user.email && this.user.password && this.user.cpassword) {
         // this.$router.push({ path: '/' }) // 无需向后台提交数据，方便前台调试
-        axios.post('/register', {
-          name: this.user.username,
-          email: this.user.email,
-          password: this.user.password
+        axios({
+          method: 'post',
+          url: 'http://localhost:3000',
+          data: { name: this.user.username,
+            email: this.user.email,
+            password: this.user.password
+          }
         })
           .then(res => {
+            console.log(res)
             if (res.data.status === 200) {
-              this.$router.push({ path: '/' })
             } else {
               alert('您输入的用户名已存在！')
             }

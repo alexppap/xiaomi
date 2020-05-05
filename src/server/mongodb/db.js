@@ -5,6 +5,8 @@ const Config=require('./config.js');
 
 const client = new MongoClient(Config.dbUrl);
 
+const ObjectID = MongoDB.ObjectID;
+
 class Db{
   constructor(){
     this.dbClient='';
@@ -80,6 +82,9 @@ class Db{
         })
       })
     })
+  }
+  getObjectId(id){
+    return new ObjectID(id);
   }
 }
 
