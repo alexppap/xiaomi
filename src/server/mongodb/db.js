@@ -5,8 +5,7 @@ const Config=require('./config.js');
 
 const client = new MongoClient(Config.dbUrl);
 
-const ObjectID = MongoDB.ObjectID;
-
+const ObjectID = MongoClient.ObjectID;
 class Db{
   constructor(){
     this.dbClient='';

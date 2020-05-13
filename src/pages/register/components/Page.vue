@@ -69,6 +69,7 @@ export default {
           }
         })
           .then(res => {
+            console.log(this.data)
             console.log(res)
             if (res.data.status === 200) {
             } else {
