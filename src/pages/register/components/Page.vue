@@ -62,7 +62,7 @@ export default {
         // this.$router.push({ path: '/' }) // 无需向后台提交数据，方便前台调试
         axios({
           method: 'post',
-          url: 'http://localhost:3000',
+          url: 'http://localhost:3000/login',
           data: { name: this.user.username,
             email: this.user.email,
             password: this.user.password
