@@ -24,10 +24,25 @@ router.get('/', async (ctx) => {
     list: res
   })
 })
+
 router.post('/login', koaBody(), async (ctx) => {
-  console.log(ctx.request.body)
-  let user = JSON.stringify(ctx.request.body)
-  console.log(user)
+  ctx.body = '注册成功' // 防止返回404
+  // console.log(ctx.request.body)
+  let userstatus = JSON.stringify(ctx.request.body)
+  let user = JSON.parse(userstatus)
+  let res = await DB.find('user', {'name': user.name})
+  if (res.length === 0) {
+    DB.insert('user', user)
+  }
+  // console.log(user)
+  // console.log(userstatus)
+})
+
+router.post('/login2', koaBody(), async (ctx) => {
+  const userInfo = ctx.request.body
+  let res = await DB.find('user', userInfo)
+  // console.log(res)
+  ctx.body = res
 })
 
 app.use(cors({

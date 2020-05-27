@@ -69,11 +69,9 @@ export default {
           }
         })
           .then(res => {
-            console.log(this.data)
             console.log(res)
-            if (res.data.status === 200) {
-            } else {
-              alert('您输入的用户名已存在！')
+            if (res.status === 200) {
+              this.$router.push('/')
             }
           })
       }

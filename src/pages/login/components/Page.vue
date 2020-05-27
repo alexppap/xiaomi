@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'LoginPage',
   data () {
@@ -41,15 +42,30 @@ export default {
         alert('密码不能为空')
         return false
       }
-      var user = this.$store.state.loginData[0].username1
-      var psw = this.$store.state.loginData[0].password1
-      if (this.username === user && this.password === psw) {
-        this.$store.commit('changeloginShow')
-        this.$store.commit('changeisLogin')
-        this.$router.push('/')
-      } else {
-        alert('帐号或密码错误')
-      }
+      // var user = this.$store.state.loginData[0].username1
+      // var psw = this.$store.state.loginData[0].password1
+      axios({
+        method: 'post',
+        url: 'http://localhost:3000/login2',
+        data: { name: this.username,
+          password: this.password
+        }
+      })
+        .then(res => {
+          if (res.data.length !== 0) {
+            let name = res.data[0].name
+            let password = res.data[0].password
+            // console.log(res.data[0].name)
+            if (res.status === 200 && this.username === name && this.password === password) {
+              this.$router.push('/')
+            }
+          } else {
+            alert('帐户名或密码错误')
+          }
+        })
+        // this.$store.commit('changeloginShow')
+        // this.$store.commit('changeisLogin')
+        // this.$router.push('/')
     }
   }
 }
