@@ -4,6 +4,7 @@ import Home from '@/pages/home/Home'
 import Login from '@/pages/login/Login'
 import Shopping from '@/pages/shopping/Shopping'
 import Register from '@/pages/register/Register'
+import Center from '@/pages/center/Center'
 Vue.use(Router)
 
 export default new Router({
@@ -36,6 +37,14 @@ export default new Router({
       path: '/register',
       name: 'reigister',
       component: Register,
+      meta: {
+        isLogin: false
+      }
+    },
+    {
+      path: '/center',
+      name: 'center',
+      component: Center,
       meta: {
         isLogin: false
       }
