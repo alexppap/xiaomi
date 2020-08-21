@@ -19,7 +19,7 @@
       <div class="header border-bottom">
         <span>账户资料</span>
       </div>
-      <div class="avatar-box">
+      <div class="avatar-box border-bottom">
         <div class="img-wrapper2">
           <img src="https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/8729282b199b3ec51e31c1b6b15f3f93.jpg?thumb=1&w=250&h=250&f=webp&q=90" alt="head2" class="img">
         </div>
@@ -28,6 +28,9 @@
           <div class="checkout">上传</div>
         </div>
       </div>
+    </div>
+    <div class="content" v-if= showData>
+      <div>hello</div>
     </div>
   </div>
 </template>
@@ -40,7 +43,13 @@ export default {
   },
   data () {
     return {
-      message: '22'
+      message: '22',
+      showData: true
+    }
+  },
+  methods: {
+    changeShowData () {
+      this.showData = !this.showData
     }
   }
 }
@@ -48,12 +57,19 @@ export default {
 
 <style lang="stylus" scoped>
 .container
-  position: relative
   height: 8.09rem
   padding: .4rem 1.46rem 0 1.8rem
   overflow: hidden
   background: #f5f5f5;
+  .content
+    position: fixed
+    top: 800
+    left: 28%
+    width: 800px
+    height: 600px
+    background: #fff
   .left-area
+    position: relative
     width: 20%
     border-radius: .05rem
     background: #fff
@@ -116,5 +132,6 @@ export default {
           background: #ff6700
           color: #fff
           margin-top: .2rem
-          float left
+          float: left
+          cursor: pointer
 </style>

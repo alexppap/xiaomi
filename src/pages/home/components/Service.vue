@@ -4,10 +4,10 @@
       <div class="iconfont img">&#xe632;</div>
       <div class="desc">手机app</div>
     </div>
-    <div class="icon">
+    <router-link tag="div" class="icon" to="/center">
       <div class="iconfont img">&#xe62c;</div>
       <div class="desc">个人中心</div>
-    </div>
+    </router-link>
     <div class="icon">
       <div class="iconfont img">&#xe600;</div>
       <div class="desc">售后服务</div>

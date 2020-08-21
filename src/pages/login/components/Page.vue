@@ -47,6 +47,7 @@ export default {
       axios({
         method: 'post',
         url: 'http://localhost:3000/login2',
+        withCredentials: true,
         data: { name: this.username,
           password: this.password
         }
@@ -57,16 +58,42 @@ export default {
             let password = res.data[0].password
             // console.log(res.data[0].name)
             if (res.status === 200 && this.username === name && this.password === password) {
+              this.$store.commit('changeloginShow')
+              this.$store.commit('changeisLogin')
+              this.setCookie(this.username, this.password, 7)
               this.$router.push('/')
             }
           } else {
             alert('帐户名或密码错误')
           }
         })
-        // this.$store.commit('changeloginShow')
-        // this.$store.commit('changeisLogin')
         // this.$router.push('/')
+    },
+    setCookie (name, password, maxDay) {
+      let exdate = new Date()
+      exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * maxDay)
+      window.document.cookie =
+        'userName' + '=' + name + ';path=/;expires=' + exdate.toGMTString()
+      window.document.cookie =
+        'userPwd' + '=' + password + ';path=/;expires=' + exdate.toGMTString()
+    },
+    getCookie () {
+      console.log(document.cookie, '获得cookie')
+      if (document.cookie.length > 0) {
+        var arr = document.cookie.split('; ')
+        for (var i = 0; i < arr.length; i++) {
+          var arr2 = arr[i].split('=')
+          if (arr2[0] === 'userName') {
+            this.username = arr2[1]
+          } else if (arr2[0] === 'userPwd') {
+            this.password = arr2[1]
+          }
+        }
+      }
     }
+  },
+  mounted () {
+    this.getCookie()
   }
 }
 </script>
